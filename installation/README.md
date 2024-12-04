@@ -1,6 +1,6 @@
 # Installation d'un Environnement Virtuel et des Dépendances en Local
 
-### Étape 1 : Créer un environnement virtuel
+### Créer un environnement virtuel
 ```bash
 python -m venv env
 ```
@@ -16,3 +16,11 @@ pip install notebook
 ```bash
 pip install pyspark pandas
 ```
+
+### Lancer la base de données mysql :
+```bash
+docker compose up
+```
+
+localhost:8080 
+root/root
