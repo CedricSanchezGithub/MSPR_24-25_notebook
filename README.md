@@ -11,13 +11,19 @@ Tutoriel : Configuration Docker + PyCharm avec JupyterLab
 
 #### Étape 1 : Build et lancement du conteneur Docker
 
-Build du conteneur Docker :
+Build du conteneur Docker (en se positionnant dans le dossier) :
+
+```bash
 docker build -t python-data-env .
+```
 
 Lancer le conteneur Docker :
+```bash
 docker run --name python-data-env -p 8888:8888 -v $(pwd):/app -it python-data-env
+```
 
----
+Vérifier l’accès à JupyterLab :
+Une fois le conteneur démarré, accédez à JupyterLab via http://127.0.0.1:8888/lab dans votre navigateur.
 
 #### Étape 2 : Configuration dans PyCharm
 
@@ -27,8 +33,7 @@ Cliquez sur l’icône d’engrenage, puis sur Add Interpreter.
 Sélectionnez Docker comme environnement.
 
 Configurer l’interpréteur Docker :
-Docker server : sélectionnez votre configuration Docker (par exemple, Unix socket).
-Image : choisissez l’image python-data-env que vous avez créée.
+Normalement tout est préconfigurer. Faites next, attendez que le build se fasse.
 Validez les paramètres.
 
 Configurer JupyterLab dans PyCharm :
@@ -38,13 +43,5 @@ Validez la configuration.
 
 ---
 
-#### Étape 3 : Test et utilisation
-
 Vérifier l’accès à JupyterLab :
 Une fois le conteneur démarré, accédez à JupyterLab via http://127.0.0.1:8888/lab dans votre navigateur.
-
-Lancer un notebook dans PyCharm :
-Cliquez avec le bouton droit sur un fichier .ipynb, puis sélectionnez Run File in Jupyter Notebook.
-Vérifiez que l’environnement utilise bien le serveur configuré.
-
----
